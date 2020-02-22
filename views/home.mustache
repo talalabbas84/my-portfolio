@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{global.site_name}}</title>
+    <meta name="description" content="" />
+    
+    {{>head}}
+</head>
+
+    <body>
+        <div class="homepage" id="vertex-container">
+            {{>header}}
+
+            <!--hero header-->
+            <section class="py-5 py-md-7" id="hero_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 mx-auto text-center">
+                            <h1 class="display-4 mt-5">{{page.hero_section.title}}</h1>
+                            <h1 class="display-4 mt-2 mb-5 red-font">{{page.hero_section.title2}}</h1>
+                            <p class="lead">{{page.hero_section.description}}</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+                        {{#projects}}
+                        <div class="col-md-4 col-sm-12 mb-2r">
+                            <a href="/project/{{{slug}}}">
+                                <div class="position-relative project">
+                                    <div class="image position-relative ">
+                                        <img src="{{{image}}}" class="img-fluid w-100 d-block">
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner overlay-content">
+                                                <h5 class="mb-0">{{name}}</h5>
+                                                <p>{{category}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {{/projects}}
+                    </div>
+                </div>
+            </section>
+
+            <!-- services section -->
+            {{#page.section1.show_or_hide}}
+            <section class="py-md-5" id="section1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 mx-auto text-center">
+                            <h1 class="display-4 mt-2 section-title">{{page.section1.title}}</h1>
+                            <p>{{page.section1.description}}</p>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        {{#services}}
+                        <div class="col-md-4 service mb-5" data-aos="fade-left" data-aos-duration="1000">
+                            <img class="icon mr-4" src="{{{image}}}"/>
+                            <div class="content">
+                                <h5>{{name}}</h5>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                        {{/services}}
+                    </div>
+                </div>
+            </section>
+            {{/page.section1.show_or_hide}}
+
+            <!-- blogs section -->
+            {{#page.section2.show_or_hide}}
+            <section class="py-md-5" id="section2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 mx-auto text-center">
+                            <h1 class="display-4 mt-2 section-title">{{page.section2.title}}</h1>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-4" data-aos="fade-left" data-aos-duration="800">
+                            <div class="post mb-5">
+                                <a class="img-post" href="/post/{{{post1.slug}}}">
+                                    <img src="{{{post1.image}}}" class="img-fluid">
+                                </a>
+                                <div class="post-content mt-2r">
+                                    <span class="date">{{post1.dateString}}</span>
+                                    <a href="/post/{{{post1.slug}}}"><h4>{{post1.title}}</h4></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-left" data-aos-duration="900">
+                            <div class="post mb-5">
+                                <a class="img-post" href="/post/{{{post2.slug}}}">
+                                    <img src="{{{post2.image}}}" class="img-fluid">
+                                </a>
+                                <div class="post-content mt-2r">
+                                    <span class="date">{{post2.dateString}}</span>
+                                    <a href="/post/{{{post2.slug}}}"><h4>{{post2.title}}</h4></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="post mb-5">
+                                <a class="img-post" href="/post/{{{post3.slug}}}">
+                                    <img src="{{{post3.image}}}" class="img-fluid">
+                                </a>
+                                <div class="post-content mt-2r">
+                                    <span class="date">{{post3.dateString}}</span>
+                                    <a href="/post/{{{post3.slug}}}"><h4>{{post3.title}}</h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{/page.section2.show_or_hide}}
+
+            <!-- note section -->
+            {{#page.section3.show_or_hide}}
+            <section class="py-md-5 mb-2r" id="section3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 mx-auto text-center">
+                            <h1 class="display-4 mt-2 section-title">{{page.section3.title}}</h1>
+                            <p>{{page.section3.description}}</p>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-sm-6 mx-auto" data-aos="fade-left" data-aos-duration="1000">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <input type="text" id="edd-user-name" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="edd-user-email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="edd-user-subject" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="" id="edd-user-message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                                </div>
+                                <div class="form-group text-center">
+                                    <input type="submit" id="btn-register" class="btn btn-primary btn-send-message" value="Send Message">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{/page.section3.show_or_hide}}
+
+            {{>footer}}
+
+        </div>
+
+        {{>scripts}}
+    </body>
+</html>

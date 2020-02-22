@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{project.title}}</title>
+    <meta name="description" content="{{project.preview}}" />
+
+    <meta property="og:title" content="{{project.name}}" />
+  	<meta property="og:type" content="article" />
+  	<meta property="og:url" content="https://{{site.url}}/post/{{project.slug}}" />
+  	<meta property="og:image" content="{{{project.image}}}=s260-c" />
+  	<meta property="og:image:width" content="260px" />
+  	<meta property="og:image:height" content="260px" />
+  	<meta property="og:description" content="{{project.preview}}" />
+    {{>head}}
+</head>
+
+    <body>
+        <div id="vertex-container" class="project-post">
+            {{>header2}}
+
+            <section class="py-5 mb-5" data-aos="fade-up">
+                <div class="container post-content">
+                    <div class="text-center pt-5">
+                        <h1 class="section-title position-relative pb-3 mt-5">{{project.name}}</h1>
+                    </div>
+
+                    <div class="row mt-5 pt-4">
+                        <div class="col-md-5">
+                            <p class="pt-3 mb-2r"><img src="{{{project.image}}}=s1080"/></p>
+                        </div>
+                        <div class="col-md-7">
+                            <h4 style="font-weight: 600;">{{project.category}}</h4>
+                            <div class="text">{{{project.description}}}</div>
+                            <ul class="mb-3 mt-2r">
+                                <li><strong>Client</strong><p>{{project.client}}Name</p></li>
+                                <li><strong>Year</strong><p>{{project.dateRange}}2019</p></li>
+                            </ul>
+                            <a class="view-btn" href="{{{project.link}}}" target="_blank"><button class="btn btn-primary btn-send-message">View Project</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {{>footer}}
+
+        </div>
+
+        {{>scripts}}
+    </body>
+</html>
